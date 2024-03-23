@@ -39,4 +39,4 @@ app.listen(PORT, () => {
     .on('error', err => console.error('Server error:', err));
 */
     
-export const handler = serverless(api);
+modular.exports.handler = serverless(app);
