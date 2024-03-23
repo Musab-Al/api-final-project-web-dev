@@ -26,6 +26,10 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.get('/test', (req, res) => {
+    // Send a response message
+    res.send('This is a test route!');
+  });
 app.use('/.netlify/functions/api/auth', authRoutes);
 
 /* Error handling for app listening
