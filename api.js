@@ -32,11 +32,10 @@ app.get('/test', (req, res) => {
   });
 app.use('/.netlify/functions/api/auth', authRoutes);
 
-/* Error handling for app listening
+// Error handling for app listening
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
     .on('error', err => console.error('Server error:', err));
-*/
+
     
-modular.exports.handler = serverless(app);
