@@ -1,10 +1,7 @@
 # Ignore node_modules directory
 node_modules/
 
-# Ignore build artifacts
-build/
-dist/
-*.log
+function 
 
 # Ignore environment-specific files
 .env
@@ -39,3 +36,5 @@ ehthumbs.db
 # Ignore backup files
 *~
 *.bak
+# Local Netlify folder
+.netlify

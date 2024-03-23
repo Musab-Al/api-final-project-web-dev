@@ -1,4 +1,5 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const cors = require('cors');
@@ -7,6 +8,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+
 
 // Connect to MongoDB with error handling
 mongoose.connect(process.env.MONGODB_URI, {
@@ -23,10 +26,13 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use('/auth', authRoutes);
+app.use('/.netlify/functions/api/auth', authRoutes);
 
-// Error handling for app listening
+/* Error handling for app listening
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
     .on('error', err => console.error('Server error:', err));
+*/
+    
+export const handler = serverless(api);
