@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node api.js",
+    "start": "node api.js --host 0.0.0.0 --port 10000",
     "build": "node api.js"
   },
   "keywords": [],
