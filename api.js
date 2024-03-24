@@ -2,13 +2,14 @@ const express = require('express');
 const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
+const coursesRoutes = require('./routes/Courses');
+const gradesRoutes = require('./routes/Grades');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 
 
 // Connect to MongoDB with error handling
@@ -31,6 +32,13 @@ app.get('/test', (req, res) => {
     res.send('This is a test route!');
   });
 app.use('/auth', authRoutes);
+app.use('/Courses', CoursesRoutes);
+app.use('/Grades', GradesRoutes);
+app.use('/Assignment', AssignmentRoutes);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
 
 // Error handling for app listening
 app.listen(PORT, () => {
