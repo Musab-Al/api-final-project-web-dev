@@ -25,6 +25,7 @@ app.use(express.json());
 
 // CORS with specific allowed origins
 app.use(cors());
+app.options('*', cors());
 
 // Routes
 app.get('/test', (req, res) => {
